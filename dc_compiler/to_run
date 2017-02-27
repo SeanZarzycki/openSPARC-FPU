@@ -1,0 +1,125 @@
+define_design_lib WORK -path ./work 
+analyze -f verilog [list ./common/cluster_header.v ./common/swrvr_clib.v ./common/swrvr_dlib.v ./common/synchronizer_asr.v ./common/test_stub_scan.v 
+./Gate/bw_clk_cl_fpu_cmp_hier.v ./Gate/fpu_add_hier.v  ./Gate/fpu_div_hier.v ./Gate/fpu_in_hier.v ./Gate/fpu_mul_hier.v ./Gate/fpu_out_hier.v 
+./Gate/fpu_rptr_groups_hier.v ./pr_macro/mul64.v ./rtl/bw_clk_cl_fpu_cmp.v ./rtl/fpu.v ./rtl/fpu_add.v ./rtl/fpu_add_ctl.v ./rtl/fpu_add_exp_dp.v
+./rtl/fpu_add_frac_dp.v ./rtl/fpu_cnt_lead0_53b.v ./rtl/fpu_cnt_lead0_64b.v ./rtl/fpu_cnt_lead0_lvl1.v ./rtl/fpu_cnt_lead0_lvl2.v ./rtl/fpu_cnt_lead0_lvl3.v
+./rtl/fpu_cnt_lead0_lvl4.v ./rtl/fpu_denorm_3b.v ./rtl/fpu_denorm_3to1.v ./rtl/fpu_denorm_frac.v ./rtl/fpu_div.v ./rtl/fpu_div_ctl.v ./rtl/fpu_div_exp_dp.v
+./rtl/fpu_div_frac_dp.v ./rtl/fpu_in.v ./rtl/fpu_in2_gt_in1_2b.v ./rtl/fpu_in2_gt_in1_3b.v ./rtl/fpu_in2_gt_in1_3to1.v ./rtl/fpu_in2_gt_in1_frac.v 
+./rtl/fpu_in_ctl.v ./rtl/fpu_in_dp.v ./rtl/fpu_mul.v ./rtl/fpu_mul_ctl.v ./rtl/fpu_mul_exp_dp.v ./rtl/fpu_mul_frac_dp.v ./rtl/fpu_out.v ./rtl/fpu_out_ctl.v
+./rtl/fpu_out_dp.v ./rtl/fpu_rptr_groups.v ./rtl/fpu_rptr_macros.v ./rtl/fpu_rptr_min_global.v ./rtl/swrvr_clib.v ./srams/bw_r_rf16x160.v]
+
+
+elaborate cluster_header
+link
+elaborate swrvr_clib
+link
+elaborate synchronizer_asr
+link
+elaborate test_stub_scan
+link
+elaborate bw_clk_cl_fpu_cmp_hier
+link
+elaborate fpu_add_hier
+link
+elaborate fpu_div_hier
+link
+elaborate fpu_in_hier
+link
+elaborate fpu_mul_hier
+link
+elaborate fpu_out_hier
+link
+elaborate fpu_rptr_groups_hier
+link
+elaborate mul64
+link
+elaborate fpu
+link
+elaborate fpu_add
+link
+elaborate fpu_add_ctl
+link
+elaborate fpu_add_exp_dp
+link
+elaborate fpu_add_frac_dp
+link
+elaborate fpu_cnt_lead0_53b
+link
+elaborate fpu_cnt_lead0_64b
+link
+elaborate fpu_cnt_lead0_lvl1
+link
+elaborate fpu_cnt_lead0_lvl2
+link
+elaborate fpu_cnt_lead0_lvl3
+link
+elaborate fpu_cnt_lead0_lvl4
+link
+elaborate fpu_denorm_3b
+link
+elaborate fpu_denorm_3to1
+link
+elaborate fpu_denorm_frac
+link
+elaborate fpu_div
+link
+elaborate fpu_div_ctl
+link
+elaborate fpu_div_exp_dp
+link
+elaborate fpu_div_frac_dp
+link
+elaborate fpu_in
+link
+elaborate fpu_in2_gt_in1_2b
+link
+elaborate fpu_in2_gt_in1_3b
+link
+elaborate fpu_in2_gt_in1_3to1
+link
+elaborate fpu_in2_gt_in1_frac
+link
+elaborate fpu_in_ctl
+link
+elaborate fpu_in_dp
+link
+elaborate fpu_mul
+link
+elaborate fpu_mul_ctl
+link
+elaborate fpu_mul_exp_dp
+link
+elaborate fpu_mul_frac_dp
+link
+elaborate fpu_out
+link
+elaborate fpu_out_ctl
+link
+elaborate fpu_out_dp
+link
+elaborate pu_rptr_groups
+link
+elaborate fpu_rptr_macros
+link
+elaborate swrvr_clib
+link
+elaborate bw_r_rf16x160
+link
+write -hier -f ddc -output unmapped/Open_Project.ddc
+read_ddc unmapped/Open_Project.ddc
+create_clock -period 2 CK
+set_clock_latency 0.4 CK
+set_clock_uncertainty 0.05 CK
+set_clock_transition 0.1 CK
+compile
+report_design
+report_clock
+report_clock_timing -type skew
+report_clock_timing -type latency
+report_power
+report_power_calculation CK
+report_clock_timing -type transition
+report_clock_tree
+write -hier -f ddc -output unmapped/Open_Project_2.ddc
+write -hier -f verilog -output unmapped/Open_Project_2.v
+
