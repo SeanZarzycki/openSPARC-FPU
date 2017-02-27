@@ -19,7 +19,7 @@ export VCS_ARCH_OVERRIDE=linux
 
 ##2016 Tools
 ##DCC
-export PATH=$SNPDIR/core-synthesis-tools/bin
+export PATH=$SNPSDIR/core-synthesis-tools/bin:$PATH
 ##ICC
 export PATH=$SNPSDIR/icc/bin:$PATH
 #PrimeTime
