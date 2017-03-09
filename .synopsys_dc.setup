@@ -1,0 +1,5 @@
+set file_lib "/mnt/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models"
+set search_path "$search_path .design/common ./design/Gate ./design/include ./design/lib ./design/pr_macro ./design/rtl ./design/sram"
+set synthetic_library "dw_foundation.sldb"
+set target_library "/home/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db"
+set link_library "* $target_library $synthetic_library"
