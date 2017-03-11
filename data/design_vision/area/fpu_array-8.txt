@@ -1,0 +1,31 @@
+****************************************
+Report : area
+Design : fpu_array
+Version: M-2016.12-SP1
+Date   : Sat Mar 11 00:28:36 2017
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+
+Number of ports:                       311330
+Number of nets:                        581239
+Number of cells:                       262795
+Number of combinational cells:         208083
+Number of sequential cells:             29720
+Number of macros/black boxes:               0
+Number of buf/inv:                      41568
+Number of references:                      10
+
+Combinational area:            2121191.431362
+Buf/Inv area:                   230857.119518
+Noncombinational area:          524633.713715
+Macro/Black Box area:                0.000000
+Net Interconnect area:          330933.501503
+
+Total cell area:               2645825.145077
+Total area:                    2976758.646580
+
+Information: This design contains black box (unknown) components. (RPT-8)
+

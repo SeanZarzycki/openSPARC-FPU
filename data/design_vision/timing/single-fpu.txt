@@ -1,0 +1,47 @@
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Fri Mar 10 23:55:00 2017
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: bw_r_rf16x160/ren_d1_reg
+              (rising edge-triggered flip-flop clocked by gclk)
+  Endpoint: bw_r_rf16x160/ren_d1_reg
+            (rising edge-triggered flip-flop clocked by gclk)
+  Path Group: gclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                540000                saed90nm_typ
+  bw_r_rf16x160      140000                saed90nm_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock gclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  bw_r_rf16x160/ren_d1_reg/CLK (DFFX1)                    0.00       0.20 r
+  bw_r_rf16x160/ren_d1_reg/Q (DFFX1)                      0.02       0.22 r
+  bw_r_rf16x160/U1176/Z (NBUFFX2)                         0.09       0.31 r
+  bw_r_rf16x160/U1029/Z (NBUFFX2)                         0.21       0.52 r
+  bw_r_rf16x160/U3/Q (AO22X1)                             0.12       0.64 r
+  bw_r_rf16x160/ren_d1_reg/D (DFFX1)                      0.03       0.67 r
+  data arrival time                                                  0.67
+
+  clock gclk (rise edge)                                  2.00       2.00
+  clock network delay (ideal)                             0.20       2.20
+  bw_r_rf16x160/ren_d1_reg/CLK (DFFX1)                    0.00       2.20 r
+  library setup time                                     -0.05       2.15
+  data required time                                                 2.15
+  --------------------------------------------------------------------------
+  data required time                                                 2.15
+  data arrival time                                                 -0.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.48

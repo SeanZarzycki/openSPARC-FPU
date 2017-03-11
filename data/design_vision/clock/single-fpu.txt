@@ -1,0 +1,19 @@
+****************************************
+Report : clocks
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Fri Mar 10 23:55:52 2017
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+gclk             2.00   {0 1}                         {gclk}
+--------------------------------------------------------------------------------
+1

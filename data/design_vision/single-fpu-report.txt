@@ -1,0 +1,127 @@
+****************************************
+Report : area
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Fri Mar 10 23:54:19 2017
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+
+Number of ports:                        38880
+Number of nets:                         72533
+Number of cells:                        32747
+Number of combinational cells:          26034
+Number of sequential cells:              3590
+Number of macros/black boxes:               0
+Number of buf/inv:                       5220
+Number of references:                       9
+
+Combinational area:             265278.874524
+Buf/Inv area:                    28989.850343
+Noncombinational area:           65579.214214
+Macro/Black Box area:                0.000000
+Net Interconnect area:           39453.150605
+
+Total cell area:                330858.088738
+Total area:                     370311.239343
+
+Information: This design contains black box (unknown) components. (RPT-8)
+
+****************************************
+Report : clocks
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Fri Mar 10 23:55:52 2017
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+gclk             2.00   {0 1}                         {gclk}
+--------------------------------------------------------------------------------
+1
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =  26.7872 mW   (77%)
+  Net Switching Power  =   7.9054 mW   (23%)
+                         ---------
+Total Dynamic Power    =  34.6926 mW  (100%)
+
+Cell Leakage Power     =   1.5464 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network  2.6686e+04        7.8439e+03        1.0516e+09        3.5581e+04  (  98.19%)
+register          68.4458            4.2313        2.5414e+07           98.0906  (   0.27%)
+sequential     -3.0309e-01        6.0233e-02        2.7304e+08          272.8004 (   0.75%)
+combinational     33.3705           53.8858        1.9635e+08          283.6062  (   0.78%)
+--------------------------------------------------------------------------------------------------
+Total          2.6787e+04 uW     7.9020e+03 uW     1.5464e+09 pW     3.6236e+04 uW
+
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Fri Mar 10 23:55:00 2017
+****************************************
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: bw_r_rf16x160/ren_d1_reg
+              (rising edge-triggered flip-flop clocked by gclk)
+  Endpoint: bw_r_rf16x160/ren_d1_reg
+            (rising edge-triggered flip-flop clocked by gclk)
+  Path Group: gclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  fpu                540000                saed90nm_typ
+  bw_r_rf16x160      140000                saed90nm_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock gclk (rise edge)                                  0.00       0.00
+  clock network delay (ideal)                             0.20       0.20
+  bw_r_rf16x160/ren_d1_reg/CLK (DFFX1)                    0.00       0.20 r
+  bw_r_rf16x160/ren_d1_reg/Q (DFFX1)                      0.02       0.22 r
+  bw_r_rf16x160/U1176/Z (NBUFFX2)                         0.09       0.31 r
+  bw_r_rf16x160/U1029/Z (NBUFFX2)                         0.21       0.52 r
+  bw_r_rf16x160/U3/Q (AO22X1)                             0.12       0.64 r
+  bw_r_rf16x160/ren_d1_reg/D (DFFX1)                      0.03       0.67 r
+  data arrival time                                                  0.67
+
+  clock gclk (rise edge)                                  2.00       2.00
+  clock network delay (ideal)                             0.20       2.20
+  bw_r_rf16x160/ren_d1_reg/CLK (DFFX1)                    0.00       2.20 r
+  library setup time                                     -0.05       2.15
+  data required time                                                 2.15
+  --------------------------------------------------------------------------
+  data required time                                                 2.15
+  data arrival time                                                 -0.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.48
