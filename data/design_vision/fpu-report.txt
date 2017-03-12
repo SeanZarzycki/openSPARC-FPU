@@ -1,0 +1,340 @@
+Global Operating Voltage = 1.2  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ns
+    Dynamic Power Units = 1uW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+  Cell Internal Power  =   2.1935 mW   (50%)
+  Net Switching Power  =   2.2329 mW   (50%)
+                         ---------
+Total Dynamic Power    =   4.4264 mW  (100%)
+
+Cell Leakage Power     =   2.3985 mW
+
+
+                 Internal         Switching           Leakage            Total
+Power Group      Power            Power               Power              Power   (   %    )  Attrs
+--------------------------------------------------------------------------------------------------
+io_pad             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+memory             0.0000            0.0000            0.0000            0.0000  (   0.00%)
+black_box          0.0000            0.0000            0.0000            0.0000  (   0.00%)
+clock_network     36.0869        1.4059e+03        8.0035e+05        1.4427e+03  (  21.14%)
+register         704.8248           55.6783        6.4749e+08        1.4080e+03  (  20.63%)
+sequential     -2.3295e-01            0.0000        2.7253e+08          272.2977 (   3.99%)
+combinational  1.4528e+03          771.2986        1.4777e+09        3.7018e+03  (  54.24%)
+--------------------------------------------------------------------------------------------------
+Total          2.1935e+03 uW     2.2328e+03 uW     2.3985e+09 pW     6.8249e+03 uW
+1
+design_vision> report_area
+ 
+****************************************
+Report : area
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Sat Mar 11 23:09:50 2017
+****************************************
+
+Library(s) Used:
+
+    saed90nm_typ (File: /home/class_data/ecec574-f2016/SAED_EDK90nm/Digital_Standard_cell_Library/synopsys/models/saed90nm_typ.db)
+
+Number of ports:                        58696
+Number of nets:                         98460
+Number of cells:                        48204
+Number of combinational cells:          32303
+Number of sequential cells:             12334
+Number of macros/black boxes:               0
+Number of buf/inv:                       7271
+Number of references:                       9
+
+Combinational area:             338409.676920
+Buf/Inv area:                    42515.252144
+Noncombinational area:          181073.203209
+Macro/Black Box area:                0.000000
+Net Interconnect area:           45615.857158
+
+Total cell area:                519482.880129
+Total area:                     565098.737287
+1
+design_vision> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Sat Mar 11 23:09:53 2017
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: TYPICAL   Library: saed90nm_typ
+Wire Load Model Mode: enclosed
+
+  Startpoint: fpu_mul/i_m4stg_frac/a2cot_dff/q_reg[0]/CLK
+              (internal path startpoint clocked by gclk)
+  Endpoint: fpu_mul/i_m4stg_frac/out_dff/q_reg[97]
+            (rising edge-triggered flip-flop clocked by gclk)
+  Path Group: gclk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  mul64              280000                saed90nm_typ
+  mul64_DW01_add_2   8000                  saed90nm_typ
+  mul64_DW01_add_1   8000                  saed90nm_typ
+  dff_SIZE104        8000                  saed90nm_typ
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock gclk (rise edge)                                  1.60       1.60
+  clock network delay (ideal)                             0.20       1.80
+  input external delay                                    0.00       1.80 r
+  fpu_mul/i_m4stg_frac/a2cot_dff/q_reg[0]/CLK (DFFX1)     0.00       1.80 r
+  fpu_mul/i_m4stg_frac/a2cot_dff/q_reg[0]/Q (DFFX1)       0.02       1.82 r
+  fpu_mul/i_m4stg_frac/a2cot_dff/q[0] (dff_SIZE97)        0.00       1.82 r
+  fpu_mul/i_m4stg_frac/add_289/B[1] (mul64_DW01_add_2)
+                                                          0.00       1.82 r
+  fpu_mul/i_m4stg_frac/add_289/U1_1/CO (FADDX1)           0.27       2.09 r
+  fpu_mul/i_m4stg_frac/add_289/U1_2/CO (FADDX1)           0.03       2.11 r
+  fpu_mul/i_m4stg_frac/add_289/U1_3/CO (FADDX1)           0.03       2.14 r
+  fpu_mul/i_m4stg_frac/add_289/U1_4/CO (FADDX1)           0.03       2.17 r
+  fpu_mul/i_m4stg_frac/add_289/U1_5/CO (FADDX1)           0.03       2.19 r
+  fpu_mul/i_m4stg_frac/add_289/U4/QN (NAND2X0)            0.01       2.20 f
+  fpu_mul/i_m4stg_frac/add_289/U5/QN (NAND3X0)            0.01       2.21 r
+  fpu_mul/i_m4stg_frac/add_289/U9/QN (NAND2X0)            0.01       2.22 f
+  fpu_mul/i_m4stg_frac/add_289/U11/QN (NAND3X0)           0.01       2.23 r
+  fpu_mul/i_m4stg_frac/add_289/U1_8/CO (FADDX1)           0.03       2.26 r
+  fpu_mul/i_m4stg_frac/add_289/U1_9/CO (FADDX1)           0.03       2.28 r
+  fpu_mul/i_m4stg_frac/add_289/U1_10/CO (FADDX1)          0.03       2.31 r
+  fpu_mul/i_m4stg_frac/add_289/U1_11/CO (FADDX1)          0.03       2.34 r
+  fpu_mul/i_m4stg_frac/add_289/U1_12/CO (FADDX1)          0.03       2.37 r
+  fpu_mul/i_m4stg_frac/add_289/U1_13/CO (FADDX1)          0.03       2.39 r
+  fpu_mul/i_m4stg_frac/add_289/U1_14/CO (FADDX1)          0.03       2.42 r
+  fpu_mul/i_m4stg_frac/add_289/U1_15/CO (FADDX1)          0.03       2.45 r
+  fpu_mul/i_m4stg_frac/add_289/U1_16/CO (FADDX1)          0.03       2.47 r
+  fpu_mul/i_m4stg_frac/add_289/U1_17/CO (FADDX1)          0.03       2.50 r
+  fpu_mul/i_m4stg_frac/add_289/U1_18/CO (FADDX1)          0.03       2.53 r
+  fpu_mul/i_m4stg_frac/add_289/U1_19/CO (FADDX1)          0.03       2.55 r
+  fpu_mul/i_m4stg_frac/add_289/U1_20/CO (FADDX1)          0.03       2.58 r
+  fpu_mul/i_m4stg_frac/add_289/U1_21/CO (FADDX1)          0.03       2.61 r
+  fpu_mul/i_m4stg_frac/add_289/U1_22/CO (FADDX1)          0.03       2.64 r
+  fpu_mul/i_m4stg_frac/add_289/U1_23/CO (FADDX1)          0.03       2.66 r
+  fpu_mul/i_m4stg_frac/add_289/U1_24/CO (FADDX1)          0.03       2.69 r
+  fpu_mul/i_m4stg_frac/add_289/U1_25/CO (FADDX1)          0.03       2.72 r
+  fpu_mul/i_m4stg_frac/add_289/U1_26/CO (FADDX1)          0.03       2.74 r
+  fpu_mul/i_m4stg_frac/add_289/U1_27/CO (FADDX1)          0.03       2.77 r
+  fpu_mul/i_m4stg_frac/add_289/U15/QN (NAND2X0)           0.01       2.78 f
+  fpu_mul/i_m4stg_frac/add_289/U16/QN (NAND3X0)           0.01       2.79 r
+  fpu_mul/i_m4stg_frac/add_289/U21/QN (NAND2X0)           0.01       2.80 f
+  fpu_mul/i_m4stg_frac/add_289/U22/QN (NAND3X0)           0.01       2.81 r
+  fpu_mul/i_m4stg_frac/add_289/U1_30/CO (FADDX1)          0.03       2.83 r
+  fpu_mul/i_m4stg_frac/add_289/U25/QN (NAND2X0)           0.01       2.84 f
+  fpu_mul/i_m4stg_frac/add_289/U27/QN (NAND3X0)           0.01       2.85 r
+  fpu_mul/i_m4stg_frac/add_289/SUM[32] (mul64_DW01_add_2)
+                                                          0.00       2.85 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/CI (mul64_DW01_add_1)
+                                                          0.00       2.85 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U3/ZN (INVX0)
+                                                          0.05       2.91 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U4/ZN (INVX0)
+                                                          0.01       2.91 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_0/CO (FADDX1)
+                                                          0.03       2.94 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_1/CO (FADDX1)
+                                                          0.03       2.97 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_2/CO (FADDX1)
+                                                          0.03       2.99 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_3/CO (FADDX1)
+                                                          0.03       3.02 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_4/CO (FADDX1)
+                                                          0.03       3.05 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_5/CO (FADDX1)
+                                                          0.03       3.08 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_6/CO (FADDX1)
+                                                          0.03       3.10 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_7/CO (FADDX1)
+                                                          0.03       3.13 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_8/CO (FADDX1)
+                                                          0.03       3.16 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_9/CO (FADDX1)
+                                                          0.03       3.18 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_10/CO (FADDX1)
+                                                          0.03       3.21 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_11/CO (FADDX1)
+                                                          0.03       3.24 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_12/CO (FADDX1)
+                                                          0.03       3.26 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_13/CO (FADDX1)
+                                                          0.03       3.29 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_14/CO (FADDX1)
+                                                          0.03       3.32 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_15/CO (FADDX1)
+                                                          0.03       3.35 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_16/CO (FADDX1)
+                                                          0.03       3.37 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_17/CO (FADDX1)
+                                                          0.03       3.40 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_18/CO (FADDX1)
+                                                          0.03       3.43 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_19/CO (FADDX1)
+                                                          0.03       3.45 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_20/CO (FADDX1)
+                                                          0.03       3.48 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_21/CO (FADDX1)
+                                                          0.03       3.51 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_22/CO (FADDX1)
+                                                          0.03       3.53 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_23/CO (FADDX1)
+                                                          0.03       3.56 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U7/QN (NAND2X0)
+                                                          0.01       3.57 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U8/QN (NAND3X0)
+                                                          0.01       3.58 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U13/QN (NAND2X0)
+                                                          0.01       3.59 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U14/QN (NAND3X0)
+                                                          0.01       3.60 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_26/CO (FADDX1)
+                                                          0.03       3.63 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_27/CO (FADDX1)
+                                                          0.03       3.65 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_28/CO (FADDX1)
+                                                          0.03       3.68 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_29/CO (FADDX1)
+                                                          0.03       3.71 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_30/CO (FADDX1)
+                                                          0.03       3.73 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_31/CO (FADDX1)
+                                                          0.03       3.76 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_32/CO (FADDX1)
+                                                          0.03       3.79 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_33/CO (FADDX1)
+                                                          0.03       3.81 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_34/CO (FADDX1)
+                                                          0.03       3.84 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_35/CO (FADDX1)
+                                                          0.03       3.87 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_36/CO (FADDX1)
+                                                          0.03       3.90 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_37/CO (FADDX1)
+                                                          0.03       3.92 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_38/CO (FADDX1)
+                                                          0.03       3.95 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_39/CO (FADDX1)
+                                                          0.03       3.98 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_40/CO (FADDX1)
+                                                          0.03       4.00 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U17/QN (NAND2X0)
+                                                          0.01       4.01 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U18/QN (NAND3X0)
+                                                          0.01       4.02 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U23/QN (NAND2X0)
+                                                          0.01       4.03 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U24/QN (NAND3X0)
+                                                          0.01       4.04 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_43/CO (FADDX1)
+                                                          0.03       4.07 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_44/CO (FADDX1)
+                                                          0.03       4.10 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_45/CO (FADDX1)
+                                                          0.03       4.12 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_46/CO (FADDX1)
+                                                          0.03       4.15 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_47/CO (FADDX1)
+                                                          0.03       4.18 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_48/CO (FADDX1)
+                                                          0.03       4.20 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_49/CO (FADDX1)
+                                                          0.03       4.23 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_50/CO (FADDX1)
+                                                          0.03       4.26 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_51/CO (FADDX1)
+                                                          0.03       4.28 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_52/CO (FADDX1)
+                                                          0.03       4.31 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_53/CO (FADDX1)
+                                                          0.03       4.34 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_54/CO (FADDX1)
+                                                          0.03       4.36 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_55/CO (FADDX1)
+                                                          0.03       4.39 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_56/CO (FADDX1)
+                                                          0.03       4.42 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_57/CO (FADDX1)
+                                                          0.03       4.45 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U31/QN (NAND2X0)
+                                                          0.01       4.45 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U32/QN (NAND3X0)
+                                                          0.01       4.46 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U37/QN (NAND2X0)
+                                                          0.01       4.47 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U38/QN (NAND3X0)
+                                                          0.01       4.48 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_60/CO (FADDX1)
+                                                          0.03       4.51 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U50/QN (NAND2X0)
+                                                          0.01       4.52 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U51/QN (NAND3X0)
+                                                          0.01       4.53 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U56/QN (NAND2X0)
+                                                          0.01       4.54 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U57/QN (NAND3X0)
+                                                          0.01       4.55 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U42/QN (NAND2X0)
+                                                          0.01       4.56 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U43/QN (NAND3X0)
+                                                          0.01       4.57 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U46/QN (NAND2X0)
+                                                          0.01       4.58 f
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U47/QN (NAND3X0)
+                                                          0.01       4.58 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/U1_65/Q (XOR3X1)
+                                                          0.01       4.60 r
+  fpu_mul/i_m4stg_frac/add_1_root_add_293_2/SUM[65] (mul64_DW01_add_1)
+                                                          0.00       4.60 r
+  fpu_mul/i_m4stg_frac/U2/Q (XNOR2X1)                     0.08       4.68 r
+  fpu_mul/i_m4stg_frac/out_dff/din[97] (dff_SIZE104)      0.00       4.68 r
+  fpu_mul/i_m4stg_frac/out_dff/U3/Q (AO22X1)              0.05       4.72 r
+  fpu_mul/i_m4stg_frac/out_dff/q_reg[97]/D (DFFX1)        0.00       4.73 r
+  data arrival time                                                  4.73
+
+  clock gclk (rise edge)                                  4.60       4.60
+  clock network delay (ideal)                             0.20       4.80
+  fpu_mul/i_m4stg_frac/out_dff/q_reg[97]/CLK (DFFX1)      0.00       4.80 r
+  library setup time                                     -0.05       4.75
+  data required time                                                 4.75
+  --------------------------------------------------------------------------
+  data required time                                                 4.75
+  data arrival time                                                 -4.73
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.03
+
+
+1
+design_vision> report_clock
+ 
+****************************************
+Report : clocks
+Design : fpu
+Version: M-2016.12-SP1
+Date   : Sat Mar 11 23:09:54 2017
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+gclk             3.00   {1.6 2.4}                     {gclk}
+--------------------------------------------------------------------------------
+
