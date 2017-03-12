@@ -1,5 +1,4 @@
-create_clock gclk -period 2 
-#set_fix_hold [find clock gclk]
+create_clock gclk -period 2
 set_clock_transition 0.1 gclk
 set_clock_latency 0.2 gclk
 set_timing_derate -data 0.1

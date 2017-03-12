@@ -9,4 +9,10 @@ set_timing_derate -data 0.1
 set_timing_derate -clock 0.1
 set_wire_load_mode enclosed
 
+
 compile
+
+write_file -format ddc -output ./unmapped/fpu.ddc
+write_sdf ./unmapped/fpu.sdf
+write_sdc ./unmapped/fpu.sdc
+
