@@ -4,8 +4,8 @@
 ## Opens the ICC GUI and reads in the necessay files
 #start_gui
 open_mw_lib ./lib
-read_ddc ./fpu_array.ddc
-read_sdc ./unmapped/fpu_array-8.sdc
+read_ddc ./unmapped/fpu_array.ddc
+read_sdc ./unmapped/fpu_array.sdc
 #
 ##Creates the floor plan
 initialize_floorplan -core_utilization 0.6 -start_first_row -left_io2core 5.0 -bottom_io2core 5.0 -right_io2core 5.0 -top_io2core 5.0  -pin_snap
